@@ -127,7 +127,7 @@ module branch_predictor #(
         if (reset) begin
             global_history <= {PHT_BITS{1'b0}};
             for (i = 0; i < PHT_LEN; i = i + 1) begin
-                counter_table[i] <= 2'b10;
+                counter_table[i] <= 2'b01;
             end
             for (i = 0; i < BTB_LEN; i = i + 1) begin
                 branch_target_table_valid[i] <= 1'b0;
