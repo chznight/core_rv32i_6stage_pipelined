@@ -125,6 +125,8 @@ module cpu(
     always @(posedge clk or posedge rst) begin
         if (rst) begin
             PC <= 32'b0;
+        end else if (flush) begin
+            PC <= PC_next;
         end else if (!pipeline_stall) begin
             PC <= PC_next;
         end
